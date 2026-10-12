@@ -39,6 +39,10 @@ It does not inspect, log, or transmit your traffic.
 
 Intended for authorized testing on systems you own or are permitted to assess.
 
+Proxy Pivot is free and open-source — no features are locked. If it saves you time, you
+can optionally support development: https://www.buymeacoffee.com/truenix_proxy_pivot
+Source: https://github.com/TrueNix/proxy-pivot
+
 ## Permission justifications (Privacy practices tab)
 proxy  — Core function: sets Chrome's proxy to the user's selected profile via chrome.proxy.settings.
 storage — Stores the user's own proxy profiles (name, host, port, bypass list) locally via chrome.storage.sync. No data leaves the browser.
