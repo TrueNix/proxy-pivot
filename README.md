@@ -45,6 +45,33 @@ Suite, ZAP, or a SOCKS tunnel and want to flip traffic in and out with one click
 Works in any Chromium browser that supports Manifest V3 and the `proxy` API (Chrome,
 Edge, Brave, etc.).
 
+### Firefox
+
+Firefox is supported via a separate build. In Firefox:
+
+1. Open `about:debugging#/runtime/this-firefox`.
+2. Click **Load Temporary Add-on…** and pick `manifest.firefox.json` (or the unzipped
+   Firefox package).
+
+For a permanent install, submit to [addons.mozilla.org](https://addons.mozilla.org)
+(free, including signing) — publish listed, or **unlisted** to get a signed `.xpi` you
+can host and install yourself.
+
+## Building
+
+The Chrome and Firefox packages share every UI file; only the manifest and background
+script differ (Chrome uses `chrome.proxy.settings`, Firefox uses `browser.proxy.settings`).
+
+```bash
+python build.py   # writes ../proxy-pivot-chrome-<ver>.zip and ../proxy-pivot-firefox-<ver>.zip
+```
+
+| File | Chrome | Firefox |
+|------|--------|---------|
+| Manifest | `manifest.json` | `manifest.firefox.json` |
+| Background | `background.js` | `background.firefox.js` |
+| popup / options / icons | shared | shared |
+
 ## Usage
 
 - Click the icon → choose a profile (**Direct** = no proxy, **System** = OS settings).
@@ -88,8 +115,9 @@ The popup and options page are thin UIs that message the worker.
 
 | File | Role |
 |------|------|
-| `manifest.json` | MV3 manifest, permissions, command shortcut |
-| `background.js` | Proxy state owner (service worker) |
+| `manifest.json` / `manifest.firefox.json` | MV3 manifest (Chrome / Firefox) |
+| `background.js` / `background.firefox.js` | Proxy state owner (Chrome / Firefox) |
+| `build.py` | Packages both browser zips |
 | `popup.html/.css/.js` | Quick-switch popup |
 | `options.html/.css/.js` | Profile editor (CRUD) |
 | `icons/` | Toolbar icons (+ `render.py` source) |

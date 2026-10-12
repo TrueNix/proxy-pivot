@@ -1,6 +1,8 @@
 // Popup: render the profile list, let the user switch with one click.
 
-const send = (msg) => chrome.runtime.sendMessage(msg);
+// Cross-browser: Firefox exposes promise-based `browser`; Chrome only `chrome`.
+const EXT = typeof browser !== "undefined" ? browser : chrome;
+const send = (msg) => EXT.runtime.sendMessage(msg);
 
 const els = {
   list: document.getElementById("profileList"),
@@ -67,7 +69,7 @@ function makeRow(opts) {
     edit.title = "Edit profile";
     edit.addEventListener("click", (e) => {
       e.stopPropagation();
-      chrome.runtime.openOptionsPage();
+      EXT.runtime.openOptionsPage();
     });
     li.append(edit);
   }
@@ -144,7 +146,7 @@ async function render() {
   els.statusDot.classList.toggle("on", on && activeId !== "system");
 }
 
-els.addProfile.addEventListener("click", () => chrome.runtime.openOptionsPage());
-els.openOptions.addEventListener("click", () => chrome.runtime.openOptionsPage());
+els.addProfile.addEventListener("click", () => EXT.runtime.openOptionsPage());
+els.openOptions.addEventListener("click", () => EXT.runtime.openOptionsPage());
 
 render();

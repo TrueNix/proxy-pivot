@@ -1,7 +1,9 @@
 // Options: CRUD over the profile list. Saving sends the whole list to the
 // service worker, which persists it and re-applies the active profile.
 
-const send = (msg) => chrome.runtime.sendMessage(msg);
+// Cross-browser: Firefox exposes promise-based `browser`; Chrome only `chrome`.
+const EXT = typeof browser !== "undefined" ? browser : chrome;
+const send = (msg) => EXT.runtime.sendMessage(msg);
 const $ = (id) => document.getElementById(id);
 
 const COLORS = ["#ff6633", "#22c55e", "#3b82f6", "#eab308", "#ec4899", "#8b5cf6", "#14b8a6", "#f97316"];
