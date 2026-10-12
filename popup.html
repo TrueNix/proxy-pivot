@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="popup.css" />
+    <title>Proxy Pivot</title>
+  </head>
+  <body>
+    <header class="bar">
+      <div class="brand">
+        <span class="dot" id="statusDot"></span>
+        <span class="title">Proxy Pivot</span>
+      </div>
+      <div class="actions-bar">
+        <a
+          class="icon-btn heart"
+          id="donate"
+          href="https://www.buymeacoffee.com/truenix_proxy_pivot"
+          target="_blank"
+          rel="noopener"
+          title="Support development"
+          >♥</a
+        >
+        <button class="icon-btn" id="openOptions" title="Manage profiles">⚙</button>
+      </div>
+    </header>
+
+    <div class="status" id="statusLine">
+      <span class="status-label">Routing</span>
+      <span class="status-value" id="statusValue">Direct</span>
+    </div>
+
+    <ul class="list" id="profileList"></ul>
+
+    <footer class="foot">
+      <button class="ghost" id="addProfile">+ New profile</button>
+      <span class="hint">Alt&#8203;+Shift&#8203;+P to toggle</span>
+    </footer>
+    <script src="popup.js"></script>
+  </body>
+</html>

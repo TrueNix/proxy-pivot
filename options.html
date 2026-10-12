@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="options.css" />
+    <title>Proxy Pivot — Profiles</title>
+  </head>
+  <body>
+    <div class="wrap">
+      <header class="head">
+        <div>
+          <h1>Proxy Pivot</h1>
+          <p class="sub">Manage your proxy profiles. Changes apply instantly.</p>
+        </div>
+        <button class="primary" id="new">+ New profile</button>
+      </header>
+
+      <div class="grid">
+        <aside class="sidebar">
+          <ul id="sideList" class="side-list"></ul>
+        </aside>
+
+        <main class="editor" id="editor">
+          <div class="empty" id="emptyState">
+            <p>Select a profile to edit, or create a new one.</p>
+            <p class="muted">
+              Tip: the default <strong>Burp Suite</strong> profile points at
+              <code>127.0.0.1:8080</code>.
+            </p>
+          </div>
+
+          <form id="form" class="form" hidden>
+            <div class="field">
+              <label>Name</label>
+              <input id="f-name" type="text" placeholder="e.g. Burp Suite" maxlength="40" />
+            </div>
+
+            <div class="field">
+              <label>Type</label>
+              <select id="f-kind">
+                <option value="fixed">Fixed server (HTTP / SOCKS)</option>
+                <option value="pac">PAC script</option>
+                <option value="system">System settings</option>
+              </select>
+            </div>
+
+            <div data-kind="fixed">
+              <div class="row-2">
+                <div class="field">
+                  <label>Protocol</label>
+                  <select id="f-scheme">
+                    <option value="http">HTTP</option>
+                    <option value="https">HTTPS</option>
+                    <option value="socks5">SOCKS5</option>
+                    <option value="socks4">SOCKS4</option>
+                  </select>
+                </div>
+                <div class="field">
+                  <label>Color</label>
+                  <div class="swatches" id="f-swatches"></div>
+                </div>
+              </div>
+              <div class="row-2">
+                <div class="field grow">
+                  <label>Host</label>
+                  <input id="f-host" type="text" placeholder="127.0.0.1" />
+                </div>
+                <div class="field port">
+                  <label>Port</label>
+                  <input id="f-port" type="number" min="1" max="65535" placeholder="8080" />
+                </div>
+              </div>
+              <div class="test-row">
+                <button type="button" class="ghost" id="f-test">Test reachability</button>
+                <span class="test-result" id="f-test-result"></span>
+              </div>
+              <div class="field">
+                <label>Bypass list <span class="muted">(one per line — hosts that skip the proxy)</span></label>
+                <textarea id="f-bypass" rows="3" placeholder="*.internal.example&#10;10.0.0.0/8"></textarea>
+                <p class="muted small">localhost, 127.0.0.1 and &lt;local&gt; are always bypassed.</p>
+              </div>
+            </div>
+
+            <div data-kind="pac" hidden>
+              <div class="field">
+                <label>PAC URL <span class="muted">(leave blank to use inline script below)</span></label>
+                <input id="f-pacurl" type="text" placeholder="http://127.0.0.1:8080/proxy.pac" />
+              </div>
+              <div class="field">
+                <label>Inline PAC script</label>
+                <textarea id="f-pacdata" rows="6" spellcheck="false" placeholder="function FindProxyForURL(url, host) {&#10;  return 'PROXY 127.0.0.1:8080';&#10;}"></textarea>
+              </div>
+            </div>
+
+            <div class="actions">
+              <button type="button" class="danger" id="delete">Delete</button>
+              <div class="spacer"></div>
+              <button type="submit" class="primary" id="save">Save &amp; apply</button>
+            </div>
+          </form>
+        </main>
+      </div>
+
+      <section class="support">
+        <div class="support-text">
+          <strong>Proxy Pivot is free &amp; open-source.</strong>
+          <span>If it saves you time on an engagement, you can buy me a coffee. Totally optional — no features are locked.</span>
+        </div>
+        <a
+          class="support-btn"
+          href="https://www.buymeacoffee.com/truenix_proxy_pivot"
+          target="_blank"
+          rel="noopener"
+          >♥ Buy me a coffee</a
+        >
+      </section>
+
+      <p class="toast" id="toast" hidden></p>
+    </div>
+    <script src="options.js"></script>
+  </body>
+</html>
