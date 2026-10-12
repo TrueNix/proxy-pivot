@@ -129,10 +129,12 @@ async function probe(host, port, timeout = 2500) {
   const timer = setTimeout(() => ctl.abort(), timeout);
   const start = Date.now();
   try {
+    // no-cors requires redirect "follow"; a reachable listener still resolves
+    // (opaque), and a refused connection still rejects — which is all we need.
     await fetch(`http://${host}:${port}/`, {
       mode: "no-cors",
       cache: "no-store",
-      redirect: "manual",
+      redirect: "follow",
       signal: ctl.signal,
     });
     clearTimeout(timer);
