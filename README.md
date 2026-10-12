@@ -1,9 +1,19 @@
 # Proxy Pivot
 
+<p align="center">
+  <img src="icons/icon128.png" width="84" alt="Proxy Pivot icon" />
+</p>
+
 A fast, no-nonsense proxy switcher for Chrome — built for pentesters who live in Burp
 Suite, ZAP, or a SOCKS tunnel and want to flip traffic in and out with one click.
 
-![icon](icons/icon128.png)
+<p align="center">
+  <a href="https://chromewebstore.google.com/detail/oeekipnfjhpmaihaadiihiaoeffepfab"><img src="https://img.shields.io/badge/Chrome%20Web%20Store-Proxy%20Pivot-ff6633?logo=googlechrome&logoColor=white" alt="Chrome Web Store" /></a>
+  <a href="https://github.com/TrueNix/proxy-pivot/releases/latest"><img src="https://img.shields.io/github/v/release/TrueNix/proxy-pivot?color=22c55e" alt="Latest release" /></a>
+  <a href="https://www.buymeacoffee.com/truenix_proxy_pivot"><img src="https://img.shields.io/badge/%E2%99%A5%20Buy%20me%20a%20coffee-ffdd00?logo=buymeacoffee&logoColor=black" alt="Buy me a coffee" /></a>
+</p>
+
+![Proxy Pivot popup](store-assets/screenshot-1-1280x800.png)
 
 ## Features
 
@@ -89,3 +99,12 @@ The popup and options page are thin UIs that message the worker.
 - Uses `chrome.proxy`, which controls the **whole browser's** proxy, not per-tab. That
   matches how SwitchyOmega and similar tools work.
 - Only intended for authorized testing on systems you own or have permission to assess.
+
+## Support
+
+Proxy Pivot is free and open-source — no features are locked. If it saves you time on an
+engagement, you can buy me a coffee. Totally optional, and much appreciated.
+
+<a href="https://www.buymeacoffee.com/truenix_proxy_pivot">
+  <img src="https://img.shields.io/badge/%E2%99%A5%20Buy%20me%20a%20coffee-ffdd00?logo=buymeacoffee&logoColor=black&style=for-the-badge" alt="Buy me a coffee" />
+</a>
