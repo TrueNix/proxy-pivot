@@ -44,5 +44,5 @@ If this policy changes, the updated version will be posted at this URL.
 
 ## Contact
 
-Questions or concerns: please open an issue at
+Questions or concerns: email devproxypivot@gmail.com, or open an issue at
 https://github.com/TrueNix/proxy-pivot/issues

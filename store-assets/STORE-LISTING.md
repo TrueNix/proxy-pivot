@@ -12,6 +12,9 @@ Developer Tools
 ## Language
 English
 
+## Contact / support email
+devproxypivot@gmail.com
+
 ## Detailed description
 Proxy Pivot is a fast, no-nonsense proxy switcher built for pentesters and developers
 who live in Burp Suite, OWASP ZAP, mitmproxy, or a SOCKS tunnel and want to flip their
