@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Proxy Pivot — Privacy Policy</title>
+    <meta
+      name="description"
+      content="Privacy policy for the Proxy Pivot Chrome extension. Collects no user data."
+    />
+    <style>
+      :root {
+        color-scheme: light dark;
+        --bg: #ffffff;
+        --text: #1a1d23;
+        --muted: #5b6472;
+        --accent: #d1491f;
+        --border: #e5e8ec;
+        --code: #f3f4f6;
+      }
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --bg: #0f1115;
+          --text: #e6e9ef;
+          --muted: #8b93a7;
+          --accent: #ff6633;
+          --border: #272c37;
+          --code: #1e222b;
+        }
+      }
+      * { box-sizing: border-box; }
+      body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--text);
+        font: 16px/1.65 -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        -webkit-font-smoothing: antialiased;
+      }
+      main { max-width: 720px; margin: 0 auto; padding: 48px 22px 80px; }
+      h1 { font-size: 28px; margin: 0 0 4px; }
+      .updated { color: var(--muted); font-size: 14px; margin: 0 0 28px; }
+      h2 { font-size: 19px; margin: 32px 0 8px; }
+      p, li { color: var(--text); }
+      .muted { color: var(--muted); }
+      code {
+        background: var(--code);
+        padding: 1px 6px;
+        border-radius: 5px;
+        font-family: "SFMono-Regular", Consolas, monospace;
+        font-size: 14px;
+      }
+      a { color: var(--accent); }
+      .lead {
+        border-left: 3px solid var(--accent);
+        padding: 2px 0 2px 16px;
+        margin: 0 0 24px;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>Proxy Pivot — Privacy Policy</h1>
+      <p class="updated">Last updated: 2026-10-12</p>
+
+      <p class="lead">
+        Proxy Pivot is a browser extension that lets you switch Chrome's proxy between
+        profiles you create. Its privacy story is simple because it is built not to
+        collect anything.
+      </p>
+
+      <h2>What we collect</h2>
+      <p>
+        <strong>Nothing.</strong> Proxy Pivot does not collect, transmit, sell, or share
+        any personal data, browsing history, or usage analytics. There are no trackers
+        and no third-party services.
+      </p>
+
+      <h2>What is stored, and where</h2>
+      <p>
+        The only data the extension stores are the <strong>proxy profiles you create</strong>
+        — the name, protocol, host, port, bypass list, and color of each profile, plus
+        which profile is active. This is saved using Chrome's <code>storage.sync</code>
+        API, which keeps it inside your own Chrome profile (and syncs it across your
+        signed-in Chrome installations via Google, under Google's own terms). It is never
+        sent to us or to any server we control.
+      </p>
+
+      <h2>Network connections</h2>
+      <p>Proxy Pivot makes no network requests of its own except one:</p>
+      <ul>
+        <li>
+          <strong>Reachability test</strong> — when you open the popup or click a health
+          dot, the extension sends a single connection attempt to the proxy
+          <strong>host and port you entered</strong> (e.g. <code>127.0.0.1:8080</code>) to
+          check whether it is listening. No data beyond that connection attempt is sent,
+          and the result (up / down) never leaves your browser.
+        </li>
+      </ul>
+      <p>
+        The extension controls Chrome's proxy setting via the <code>proxy</code>
+        permission; while a proxy is active your traffic is routed through the proxy
+        <strong>you chose</strong>, exactly as you configured it. Proxy Pivot does not
+        inspect, log, or modify that traffic.
+      </p>
+
+      <h2>Permissions</h2>
+      <ul>
+        <li><code>proxy</code> — to set Chrome's proxy to your selected profile.</li>
+        <li><code>storage</code> — to save your profiles locally.</li>
+      </ul>
+
+      <h2>Changes</h2>
+      <p>If this policy changes, the updated version will be posted at this URL.</p>
+
+      <h2>Contact</h2>
+      <p>
+        Questions or concerns: please open an issue at
+        <a href="https://github.com/TrueNix/proxy-pivot/issues"
+          >github.com/TrueNix/proxy-pivot/issues</a
+        >.
+      </p>
+    </main>
+  </body>
+</html>
